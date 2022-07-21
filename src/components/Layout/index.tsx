@@ -1,4 +1,9 @@
+import { RaceSelector } from '../RaceSelector';
+import { GenderSelector } from '../GenderSelector';
+import { NameInput } from '../NameInput';
 import styles from './styles.module.scss';
+import { ClassSelector } from '../ClassSelector';
+import { CreateButton } from '../CreateButton';
 
 interface IProps {
   children: React.ReactNode
@@ -7,14 +12,21 @@ interface IProps {
 export function Layout({ children } : IProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.leftColumn}>
-        Left
+      <div className={styles.left}>
+        <GenderSelector />
+        <RaceSelector />
       </div>
-      <div className={styles.centerColumn}>
-        {children}
+      <div className={styles.center}>
+        <h1 className={styles.title}>
+          {children}
+        </h1>
+        <div className={styles.centerFooter}>
+          <NameInput />
+          <CreateButton />
+        </div>
       </div>
-      <div className={styles.rightColumn}>
-        Right
+      <div className={styles.right}>
+        <ClassSelector />
       </div>
     </div>
   )

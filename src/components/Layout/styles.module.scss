@@ -3,4 +3,21 @@
   grid-template: auto / 1fr 4fr 1fr;
   height: 100vh;
   padding: 1rem;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0 0 .5em;
+  font-size: 1.25rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &Footer {
+    display: flex;
+  }
 }
