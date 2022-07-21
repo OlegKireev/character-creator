@@ -4,6 +4,7 @@ import { NameInput } from '../NameInput';
 import styles from './styles.module.scss';
 import { ClassSelector } from '../ClassSelector';
 import { CreateButton } from '../CreateButton';
+import { Title } from '../Title';
 
 interface IProps {
   children: React.ReactNode
@@ -17,9 +18,7 @@ export function Layout({ children } : IProps) {
         <RaceSelector />
       </div>
       <div className={styles.center}>
-        <h1 className={styles.title}>
-          {children}
-        </h1>
+        <Title>Character creator app</Title>
         <div className={styles.centerFooter}>
           <NameInput />
           <CreateButton />
