@@ -41,8 +41,9 @@ export function useCharacterCreation() {
   };
 
   if (defaultValue === undefined) {
-    throw new Error('useEvent must be used within a CharacterContext');
+    throw new Error('useCharacterCreation must be used within a CharacterContext');
   }
+
   return {
     character: value,
     setCharacter,
