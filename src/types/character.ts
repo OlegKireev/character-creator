@@ -1,9 +1,9 @@
-import { Class, Gender, Race, Side } from "./global"
+import { ClassType, GenderType, RaceType, SideType } from "./global"
 
 export interface ICharacter {
   name: string
-  side: Side
-  race: Race
-  class: Class
-  gender: Gender
+  side: SideType
+  race: RaceType
+  class: ClassType
+  gender: GenderType
 };
