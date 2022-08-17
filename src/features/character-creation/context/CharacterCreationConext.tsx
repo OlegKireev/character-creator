@@ -27,7 +27,7 @@ export function CharacterContextProvider({
   );
 }
 
-export function useCharacter() {
+export function useCharacterCreation() {
   const defaultValue = React.useContext(CharacterContext);
   const [value, setValue] = useState(defaultValue);
 
