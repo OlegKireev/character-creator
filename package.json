@@ -23,8 +23,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "eject": "react-scripts eject"
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -48,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "husky": "^8.0.1"
   }
 }
