@@ -1,9 +1,10 @@
+import { CharacterCreation } from 'features/character-creation';
 import { Layout } from './components/Layout';
 
 function App() {
   return (
     <Layout>
-      Character creator app
+      <CharacterCreation />
     </Layout>
   );
 }

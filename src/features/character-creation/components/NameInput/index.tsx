@@ -3,5 +3,5 @@ export function NameInput() {
     <div>
       <input placeholder="Enter name..." />
     </div>
-  )
+  );
 }

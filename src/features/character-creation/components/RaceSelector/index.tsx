@@ -3,5 +3,5 @@ export function RaceSelector() {
     <div>
       RaceSelector
     </div>
-  )
+  );
 }

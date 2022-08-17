@@ -25,5 +25,5 @@ export function CharacterCreation() {
         <ClassSelector />
       </div>
     </CharacterContextProvider>
-  )
+  );
 }

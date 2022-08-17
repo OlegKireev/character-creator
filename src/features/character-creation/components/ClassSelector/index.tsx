@@ -3,5 +3,5 @@ export function ClassSelector() {
     <div>
       ClassSelector
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import React from "react";
-import { Title } from "components/Title";
-import { GenderType } from "types/global";
+import React from 'react';
+import { Title } from 'components/Title';
+import { GenderType } from 'types/global';
 import { useCharacter } from 'features/character-creation/context/CharacterConext';
 import styles from './styles.module.scss';
 
@@ -9,10 +9,10 @@ export function GenderSelector() {
   const value = character?.gender;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value as GenderType;
+    const newValue = e.target.value as GenderType;
     setCharacter({
-      gender: value,
-    })
+      gender: newValue,
+    });
   };
 
   return (
@@ -55,5 +55,5 @@ export function GenderSelector() {
         </li>
       </ul>
     </div>
-  )
+  );
 }

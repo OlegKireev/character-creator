@@ -1,5 +1,5 @@
 export function CreateButton() {
   return (
-    <button>Create</button>
-  )
+    <button type="button">Create</button>
+  );
 }
