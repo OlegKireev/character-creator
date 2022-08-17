@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 import { ClassSelector } from '../ClassSelector';
 import { CreateButton } from '../CreateButton';
 import { Title } from '../Title';
+import { CharacterContextProvider } from '../../context/CharacterConext';
 
 interface IProps {
   children: React.ReactNode
@@ -13,20 +14,22 @@ interface IProps {
 export function Layout({ children } : IProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.left}>
-        <GenderSelector />
-        <RaceSelector />
-      </div>
-      <div className={styles.center}>
-        <Title>Character creator app</Title>
-        <div className={styles.centerFooter}>
-          <NameInput />
-          <CreateButton />
+      <CharacterContextProvider gender="1">
+        <div className={styles.left}>
+          <GenderSelector />
+          <RaceSelector />
         </div>
-      </div>
-      <div className={styles.right}>
-        <ClassSelector />
-      </div>
+        <div className={styles.center}>
+          <Title>Character creator app</Title>
+          <div className={styles.centerFooter}>
+            <NameInput />
+            <CreateButton />
+          </div>
+        </div>
+        <div className={styles.right}>
+          <ClassSelector />
+        </div>
+      </CharacterContextProvider>
     </div>
   )
 };
