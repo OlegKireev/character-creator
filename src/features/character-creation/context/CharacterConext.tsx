@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { GenderType } from '../types/global';
+import { GenderType } from '../../../types/global';
 
 
 export type CharacterContextType = {

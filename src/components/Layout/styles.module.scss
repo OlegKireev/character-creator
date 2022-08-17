@@ -5,14 +5,3 @@
   padding: 1rem;
   gap: 1rem;
 }
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  &Footer {
-    display: flex;
-  }
-}

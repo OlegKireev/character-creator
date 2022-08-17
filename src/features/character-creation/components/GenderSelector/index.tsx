@@ -1,7 +1,7 @@
 import React from "react";
+import { Title } from "../../../../components/Title";
+import { GenderType } from "../../../../types/global";
 import { useCharacter } from "../../context/CharacterConext";
-import { GenderType } from "../../types/global";
-import { Title } from "../Title";
 import styles from './styles.module.scss';
 
 export function GenderSelector() {
