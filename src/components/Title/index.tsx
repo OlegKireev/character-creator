@@ -1,5 +1,5 @@
-import styles from './styles.module.scss';
 import cx from 'classnames';
+import styles from './styles.module.scss';
 
 interface IProps {
   children: React.ReactNode

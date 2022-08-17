@@ -1,5 +1,6 @@
-import { CharacterCreation } from '../../features/character-creation';
+import { CharacterCreation } from 'features/character-creation';
 import styles from './styles.module.scss';
+
 interface IProps {
   children: React.ReactNode
 } 
