@@ -18,7 +18,8 @@ module.exports = {
       'react/require-default-props': 'off',
       "jsx-a11y/label-has-associated-control": [2, {
         "depth": 3
-      }]
+      }],
+      'react/jsx-props-no-spreading': 'off',
     }
   }
   ],
