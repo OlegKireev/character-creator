@@ -1,7 +1,20 @@
+import React from "react";
+import { useCharacter } from "../../context/CharacterConext";
+import { GenderType } from "../../types/global";
 import { Title } from "../Title";
 import styles from './styles.module.scss';
 
 export function GenderSelector() {
+  const { character, setCharacter } = useCharacter();
+  const value = character?.gender;
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value as GenderType;
+    setCharacter({
+      gender: value,
+    })
+  };
+
   return (
     <div className={styles.wrapper}>
       <Title size="xs">Gender</Title>
@@ -12,6 +25,9 @@ export function GenderSelector() {
             type="radio"
             id="gender-selecotor-male"
             name="gender-selecotor"
+            value="0"
+            checked={value === '0'}
+            onChange={handleChange}
           />
           <label
             className={styles.icon}
@@ -26,6 +42,9 @@ export function GenderSelector() {
             type="radio"
             id="gender-selecotor-female"
             name="gender-selecotor"
+            value="1"
+            checked={value === '1'}
+            onChange={handleChange}
           />
           <label
             className={styles.icon}
