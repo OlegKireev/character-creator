@@ -9,8 +9,14 @@
   padding: .5em;
 }
 
+.raceLists {
+  display: flex;
+  gap: 2rem;
+}
+
 .list {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
