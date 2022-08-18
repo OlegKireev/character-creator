@@ -5,16 +5,16 @@ export type CharacterContextType = {
   gender: GenderType
 };
 
-const CharacterContext = React.createContext<CharacterContextType | undefined>(
+const CharacterContext = React.createContext<Partial<CharacterContextType> | undefined>(
   undefined,
 );
 
 export function CharacterContextProvider({
   gender,
   children,
-}: {
-  gender: GenderType,
-  children: React.ReactNode;
+}:
+CharacterContextType & {
+  children: React.ReactNode
 }) {
   const value = useMemo(() => ({
     gender,
@@ -32,7 +32,7 @@ export function useCharacterCreation() {
   const [value, setValue] = useState(defaultValue);
 
   const setCharacter = (
-    updatedFields: { [key in keyof CharacterContextType]: CharacterContextType[key] },
+    updatedFields: Partial<CharacterContextType>,
   ) => {
     setValue((prev) => ({
       ...prev,
