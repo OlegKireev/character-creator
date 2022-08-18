@@ -1,7 +1,7 @@
-export type SideType = 'Alliance' | 'Horde';
+export type SideType = 'alliance' | 'horde';
 
-export type RaceType = 'Human' | 'Dwarf' | 'Night Elf' | 'Gnome' | 'Draenei' | 'Orc' | 'Undead' | 'Tauren' | 'Troll' | 'Blood Elf';
+export type RaceType = 'human' | 'dwarf' | 'night-elf' | 'gnome' | 'draenei' | 'orc' | 'undead' | 'tauren' | 'troll' | 'blood-elf';
 
-export type ClassType = 'Warrior' | 'Rogue' | 'Mage' | 'Warlock' | 'Shaman' | 'Hunter' | 'Paladin' | 'Priest' | 'Druid';
+export type ClassType = 'warrior' | 'rogue' | 'mage' | 'warlock' | 'shaman' | 'hunter' | 'paladin' | 'priest' | 'druid';
 
 export type GenderType = '0' | '1';
