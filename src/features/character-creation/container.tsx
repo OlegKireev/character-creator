@@ -4,13 +4,8 @@ import { CreateButton } from './components/CreateButton';
 import { GenderSelector } from './components/GenderSelector';
 import { NameInput } from './components/NameInput';
 import { RaceSelector } from './components/RaceSelector';
-import { CharacterContextProvider, CharacterContextType } from './context/CharacterCreationConext';
+import { CharacterContextProvider, initialState } from './context/CharacterCreationConext';
 import styles from './styles.module.scss';
-
-const initialState: CharacterContextType = {
-  gender: '0',
-  race: 'Human',
-};
 
 export function CharacterCreation() {
   return (

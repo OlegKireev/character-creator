@@ -6,22 +6,23 @@ export type CharacterContextType = {
   race: RaceType,
 };
 
-const CharacterContext = React.createContext<Partial<CharacterContextType> | undefined>(
-  undefined,
-);
+export const initialState: CharacterContextType = {
+  gender: '0',
+  race: 'human',
+};
+
+const CharacterContext = React.createContext<Partial<CharacterContextType>>(initialState);
 
 export function CharacterContextProvider({
-  gender,
-  race,
   children,
+  ...props
 }:
 CharacterContextType & {
   children: React.ReactNode
 }) {
   const value = useMemo(() => ({
-    gender,
-    race,
-  }), [gender]);
+    ...props,
+  }), [props]);
 
   return (
     <CharacterContext.Provider value={value}>
