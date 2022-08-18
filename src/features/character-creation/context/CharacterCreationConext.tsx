@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import { GenderType } from 'types/global';
+import { GenderType, RaceType } from 'types/global';
 
 export type CharacterContextType = {
-  gender: GenderType
+  gender: GenderType,
+  race: RaceType,
 };
 
 const CharacterContext = React.createContext<Partial<CharacterContextType> | undefined>(
@@ -11,6 +12,7 @@ const CharacterContext = React.createContext<Partial<CharacterContextType> | und
 
 export function CharacterContextProvider({
   gender,
+  race,
   children,
 }:
 CharacterContextType & {
@@ -18,6 +20,7 @@ CharacterContextType & {
 }) {
   const value = useMemo(() => ({
     gender,
+    race,
   }), [gender]);
 
   return (

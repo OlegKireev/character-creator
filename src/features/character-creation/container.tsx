@@ -9,6 +9,7 @@ import styles from './styles.module.scss';
 
 const initialState: CharacterContextType = {
   gender: '0',
+  race: 'Human',
 };
 
 export function CharacterCreation() {
