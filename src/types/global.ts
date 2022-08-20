@@ -1,4 +1,4 @@
-export type SideType = 'alliance' | 'horde';
+export type SideType = 'alliance' | 'horde' | 'neutral';
 
 export type RaceType = 'human' | 'dwarf' | 'night-elf' | 'gnome' | 'draenei' | 'orc' | 'undead' | 'tauren' | 'troll' | 'blood-elf';
 
