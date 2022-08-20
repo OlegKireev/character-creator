@@ -3,6 +3,16 @@
   grid-template: auto / 1fr 4fr 1fr;
   gap: 1rem;
   height: 100%;
+  padding: 1rem;
+  transition: background-color .2s ease;
+
+  &.alliance {
+    background-color: var(--color-blue-200);
+  }
+
+  &.horde {
+    background-color: var(--color-red-200);
+  }
 }
 
 .center {
