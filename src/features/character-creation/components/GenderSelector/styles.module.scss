@@ -19,7 +19,7 @@
 
   &:checked {
     & + .icon {
-      border-color: #ffe13e;
+      border-color: var(--color-yellow-500);
     }
   }
 
