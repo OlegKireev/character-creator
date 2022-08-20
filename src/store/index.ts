@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import characterCreation from 'features/character-creation/store';
+import { characterCreationReducer as characterCreation } from 'features/character-creation';
 
 export const store = configureStore({
   reducer: {

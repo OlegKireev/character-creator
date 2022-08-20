@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { GenderType, RaceType } from 'types/global';
 
-export type CharacterStateType = {
+type CharacterStateType = {
   gender: GenderType,
   race: RaceType,
 };
 
-export const initialState: CharacterStateType = {
+const initialState: CharacterStateType = {
   gender: '0',
   race: 'human',
 };
 
-export const characterCreationSlice = createSlice({
+const slice = createSlice({
   name: 'features/characterCreation',
   initialState,
   reducers: {
@@ -22,5 +22,5 @@ export const characterCreationSlice = createSlice({
   },
 });
 
-export const characterCreationActions = characterCreationSlice.actions;
-export default characterCreationSlice.reducer;
+export const characterCreationActions = slice.actions;
+export const characterCreationReducer = slice.reducer;
