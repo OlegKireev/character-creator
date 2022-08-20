@@ -1,6 +1,6 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { characterCreationActions } from 'features/character-creation';
+import { characterCreationActions } from 'features/character-creation/store';
 
 const allActions = {
   ...characterCreationActions,
