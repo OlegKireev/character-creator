@@ -1,29 +1,30 @@
+import cx from 'classnames';
 import { Title } from 'components/Title';
-import { useCharacterCreation } from 'features/character-creation/context/CharacterCreationConext';
+import { ALLIANCE_RACE_NAMES, HORDE_RACE_NAMES } from 'constants/races';
+import { selectCharacterCreation } from 'features/character-creation/store/selectors';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { useActions } from 'store/useActions';
 import { RaceType } from 'types/global';
 import styles from './styles.module.scss';
 
 export function RaceSelector() {
-  const { character, setCharacter } = useCharacterCreation();
-  const { race: value } = character;
+  const value = useSelector(selectCharacterCreation).race;
+  const { updateCharacterCreation } = useActions();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCharacter({
+    updateCharacterCreation({
       race: e.target.value as RaceType,
     });
   };
-
-  const allianceRaces: RaceType[] = ['human', 'dwarf', 'gnome', 'night-elf', 'draenei'];
-  const hordeRaces: RaceType[] = ['orc', 'troll', 'undead', 'tauren', 'blood-elf'];
 
   return (
     <div className={styles.wrapper}>
       <Title size="xs">Race</Title>
       <div className={styles.raceLists}>
-        <ul className={styles.list}>
-          {allianceRaces.map((race) => (
-            <li>
+        <ul className={cx(styles.list, styles.alliance)}>
+          {ALLIANCE_RACE_NAMES.map((race) => (
+            <li key={`race-${race}`}>
               <input
                 className={styles.radio}
                 type="radio"
@@ -42,9 +43,9 @@ export function RaceSelector() {
             </li>
           ))}
         </ul>
-        <ul className={styles.list}>
-          {hordeRaces.map((race) => (
-            <li>
+        <ul className={cx(styles.list, styles.horde)}>
+          {HORDE_RACE_NAMES.map((race) => (
+            <li key={`race-${race}`}>
               <input
                 className={styles.radio}
                 type="radio"

@@ -1,16 +1,18 @@
 import React from 'react';
 import { Title } from 'components/Title';
 import { GenderType } from 'types/global';
-import { useCharacterCreation } from 'features/character-creation';
+import { selectCharacterCreation } from 'features/character-creation/store/selectors';
+import { useSelector } from 'react-redux';
+import { useActions } from 'store/useActions';
 import styles from './styles.module.scss';
 
 export function GenderSelector() {
-  const { character, setCharacter } = useCharacterCreation();
-  const value = character?.gender;
+  const value = useSelector(selectCharacterCreation).gender;
+  const { updateCharacterCreation } = useActions();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value as GenderType;
-    setCharacter({
+    updateCharacterCreation({
       gender: newValue,
     });
   };
