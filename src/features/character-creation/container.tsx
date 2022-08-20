@@ -1,15 +1,14 @@
-import { Title } from '../../components/Title';
+import { Title } from 'components/Title';
 import { ClassSelector } from './components/ClassSelector';
 import { CreateButton } from './components/CreateButton';
 import { GenderSelector } from './components/GenderSelector';
 import { NameInput } from './components/NameInput';
 import { RaceSelector } from './components/RaceSelector';
-import { CharacterContextProvider, initialState } from './context/CharacterCreationConext';
 import styles from './styles.module.scss';
 
 export function CharacterCreation() {
   return (
-    <CharacterContextProvider {...initialState}>
+    <main className={styles.wrapper}>
       <div className={styles.left}>
         <GenderSelector />
         <RaceSelector />
@@ -24,6 +23,6 @@ export function CharacterCreation() {
       <div className={styles.right}>
         <ClassSelector />
       </div>
-    </CharacterContextProvider>
+    </main>
   );
 }
