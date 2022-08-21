@@ -3,12 +3,14 @@ import {
   RaceType, SideType,
 } from 'types/global';
 
-export const RACES: {
+export interface IRace {
   id: number,
   name: RaceType,
   side: SideType,
   availableClasses: ClassType[]
-}[] = [{
+}
+
+export const RACES: IRace[] = [{
   id: 1,
   name: 'human',
   side: 'alliance',
