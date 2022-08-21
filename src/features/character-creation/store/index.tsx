@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GenderType, RaceType } from 'types/global';
+import { ClassType, GenderType, RaceType } from 'types/global';
 
 type CharacterStateType = {
   gender: GenderType,
   race: RaceType,
+  className: ClassType,
   characterName: string,
 };
 
 const initialState: CharacterStateType = {
   gender: '0',
   race: 'human',
+  className: 'warrior',
   characterName: '',
 };
 
