@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 interface IProps {
   value: string;
   label?: string;
-  id?: string;
+  id: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
@@ -17,13 +17,11 @@ export function Input({
   id,
   onChange,
 }: IProps) {
-  const inputId = id || `${label}${placeholder}${Math.random()}`;
-
   return (
     <div className={styles.wrapper}>
       {label && (
         <label
-          htmlFor={inputId}
+          htmlFor={id}
           className={styles.label}
         >
           <Title
@@ -38,7 +36,7 @@ export function Input({
       )}
       <input
         className={styles.input}
-        id={inputId}
+        id={id}
         value={value}
         placeholder={placeholder}
         onChange={onChange}

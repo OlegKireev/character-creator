@@ -16,6 +16,7 @@ export function NameInput() {
   return (
     <Input
       label="Name"
+      id="character-creation-name"
       value={characterName}
       onChange={handleChange}
     />
