@@ -13,30 +13,3 @@
   display: flex;
   gap: 1rem;
 }
-
-.radio {
-  @include visually-hidden();
-
-  &:checked {
-    & + .icon {
-      border-color: var(--color-yellow-500);
-    }
-  }
-
-  &:not(:disabled):not(:checked) + .icon {
-    cursor: pointer;
-  }
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: black;
-  border: 2px solid transparent;
-  color: white;
-  border-radius: .25em;
-  box-shadow: 0 0 .5em .125em rgba($color: #000000, $alpha: 0.375);
-}
