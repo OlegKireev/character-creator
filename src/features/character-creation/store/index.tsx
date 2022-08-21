@@ -4,11 +4,13 @@ import { GenderType, RaceType } from 'types/global';
 type CharacterStateType = {
   gender: GenderType,
   race: RaceType,
+  characterName: string,
 };
 
 const initialState: CharacterStateType = {
   gender: '0',
   race: 'human',
+  characterName: '',
 };
 
 const slice = createSlice({
