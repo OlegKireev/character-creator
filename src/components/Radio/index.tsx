@@ -6,6 +6,7 @@ interface IProps {
   value: string | number;
   label: string | React.ReactElement;
   isChecked: boolean,
+  isDisabled?: boolean,
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -13,8 +14,9 @@ export function Radio({
   name,
   id,
   value,
-  isChecked,
   label,
+  isChecked,
+  isDisabled = false,
   onChange,
 }: IProps) {
   return (
@@ -26,6 +28,7 @@ export function Radio({
         name={name}
         value={value}
         checked={isChecked}
+        disabled={isDisabled}
         onChange={onChange}
       />
       <label
