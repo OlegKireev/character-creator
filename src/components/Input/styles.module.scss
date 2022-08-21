@@ -9,4 +9,15 @@
 
 .input {
   display: block;
+  background-color: rgba(black, 0.5);
+  border: 1px solid #aaa;
+  border-radius: .25em;
+  box-shadow: 
+    inset 0 0 .25em .25em rgba(0, 0, 0, 0.2),
+    0 0 .25em .25em rgba(0, 0, 0, 0.2);
+  outline: none;
+  caret-color: white;
+  padding: .325em .5em .125em;
+  font-size: .875rem;
+  color: white;
 }
