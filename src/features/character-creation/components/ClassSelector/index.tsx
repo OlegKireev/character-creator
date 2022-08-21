@@ -11,12 +11,12 @@ import styles from './styles.module.scss';
 
 export function ClassSelector() {
   const { names } = useClasses();
-  const { races } = useRaces();
+  const { raceMap } = useRaces();
 
-  const { className: value, race } = useSelector(selectCharacterCreation);
+  const { className: selectedClass, race: selectedRace } = useSelector(selectCharacterCreation);
   const { updateCharacterCreation } = useActions();
 
-  const avalilableRaces = races.find((raceItem) => raceItem.name === race)?.availableClasses;
+  const availableClasses = raceMap[selectedRace]?.availableClasses;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     updateCharacterCreation({
@@ -28,22 +28,19 @@ export function ClassSelector() {
     <div className={styles.wrapper}>
       <Title size="md" variant="secondary">Class</Title>
       <ul className={styles.list}>
-        {names.map((className) => {
-          const q = races;
-          return (
-            <li key={className} className={styles.item}>
-              <Radio
-                id={`class-selecotor-${className}`}
-                name="class-selector"
-                label={className}
-                value={className}
-                isChecked={value === className}
-                isDisabled={avalilableRaces?.includes(className)}
-                onChange={handleChange}
-              />
-            </li>
-          );
-        })}
+        {names.map((className) => (
+          <li key={className} className={styles.item}>
+            <Radio
+              id={`class-selecotor-${className}`}
+              name="class-selector"
+              label={className}
+              value={className}
+              isChecked={selectedClass === className}
+              isDisabled={!availableClasses?.includes(className)}
+              onChange={handleChange}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );
