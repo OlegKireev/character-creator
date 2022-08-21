@@ -6,6 +6,7 @@ interface IProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'primary' | 'secondary';
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
+  mb?: string;
 }
 
 export function Title({
@@ -13,10 +14,16 @@ export function Title({
   size = 'xl',
   variant = 'primary',
   as = 'h2',
+  mb = '0.5em',
 }: IProps) {
   const TitleTag = as;
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{
+        marginBottom: mb,
+      }}
+    >
       <TitleTag
         className={cx(
           styles.title,
