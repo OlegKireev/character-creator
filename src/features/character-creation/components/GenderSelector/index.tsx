@@ -19,7 +19,7 @@ export function GenderSelector() {
 
   return (
     <div className={styles.wrapper}>
-      <Title size="xs">Gender</Title>
+      <Title size="md" variant="secondary">Gender</Title>
       <ul className={styles.list}>
         <li>
           <input

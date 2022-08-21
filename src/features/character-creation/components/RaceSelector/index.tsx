@@ -20,7 +20,7 @@ export function RaceSelector() {
 
   return (
     <div className={styles.wrapper}>
-      <Title size="xs">Race</Title>
+      <Title size="md" variant="secondary">Race</Title>
       <div className={styles.raceLists}>
         <ul className={cx(styles.list, styles.alliance)}>
           {ALLIANCE_RACE_NAMES.map((race) => (
