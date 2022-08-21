@@ -26,7 +26,12 @@ export function Input({
           htmlFor={inputId}
           className={styles.label}
         >
-          <Title size="md" variant="secondary" as="span">
+          <Title
+            size="md"
+            variant="secondary"
+            as="span"
+            mb="0"
+          >
             {label}
           </Title>
         </label>
