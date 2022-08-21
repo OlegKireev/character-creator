@@ -1,17 +1,18 @@
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import cx from 'classnames';
+import { selectCharacterCreation } from 'features/character-creation/store/selectors';
 import { Radio } from 'components/Radio';
 import { Title } from 'components/Title';
-import { selectCharacterCreation } from 'features/character-creation/store/selectors';
 import { useRaces } from 'hooks/useRaces';
-import React from 'react';
-import { useSelector } from 'react-redux';
 import { useActions } from 'store/useActions';
+import { getRandomArrayItem } from 'utils/arrays';
 import { RaceType } from 'types/global';
 import styles from './styles.module.scss';
 
 export function RaceSelector() {
-  const { allianceRaceNames, hordeRaceNames } = useRaces();
-  const value = useSelector(selectCharacterCreation).race;
+  const { allianceRaceNames, hordeRaceNames, raceMap } = useRaces();
+  const { race: selectedRace, className: selectedClass } = useSelector(selectCharacterCreation);
   const { updateCharacterCreation } = useActions();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +20,16 @@ export function RaceSelector() {
       race: e.target.value as RaceType,
     });
   };
+
+  useEffect(() => {
+    const availableClasses = raceMap[selectedRace]?.availableClasses;
+
+    if (!availableClasses?.includes(selectedClass) && availableClasses) {
+      updateCharacterCreation({
+        className: getRandomArrayItem(availableClasses),
+      });
+    }
+  }, [selectedRace, selectedRace]);
 
   return (
     <div className={styles.wrapper}>
@@ -32,7 +43,7 @@ export function RaceSelector() {
                 label={race}
                 id={`race-selector-${race}`}
                 value={race}
-                isChecked={value === race}
+                isChecked={selectedRace === race}
                 onChange={handleChange}
               />
             </li>
@@ -46,7 +57,7 @@ export function RaceSelector() {
                 label={race}
                 id={`race-selector-${race}`}
                 value={race}
-                isChecked={value === race}
+                isChecked={selectedRace === race}
                 onChange={handleChange}
               />
             </li>
