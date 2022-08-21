@@ -24,11 +24,11 @@ export function CharacterCreation() {
         <Title>Character creator app</Title>
         <div className={styles.centerFooter}>
           <NameInput />
-          <CreateButton />
         </div>
       </div>
       <div className={styles.right}>
         <ClassSelector />
+        <CreateButton />
       </div>
     </main>
   );
