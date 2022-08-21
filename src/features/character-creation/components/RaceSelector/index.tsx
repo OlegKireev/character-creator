@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { Radio } from 'components/Radio';
 import { Title } from 'components/Title';
 import { ALLIANCE_RACE_NAMES, HORDE_RACE_NAMES } from 'constants/races';
 import { selectCharacterCreation } from 'features/character-creation/store/selectors';
@@ -25,42 +26,28 @@ export function RaceSelector() {
         <ul className={cx(styles.list, styles.alliance)}>
           {ALLIANCE_RACE_NAMES.map((race) => (
             <li key={`race-${race}`}>
-              <input
-                className={styles.radio}
-                type="radio"
-                id={`race-selector-${race}`}
+              <Radio
                 name="race-selector"
+                label={race}
+                id={`race-selector-${race}`}
                 value={race}
-                checked={value === race}
+                isChecked={value === race}
                 onChange={handleChange}
               />
-              <label
-                className={styles.icon}
-                htmlFor={`race-selector-${race}`}
-              >
-                {race}
-              </label>
             </li>
           ))}
         </ul>
         <ul className={cx(styles.list, styles.horde)}>
           {HORDE_RACE_NAMES.map((race) => (
             <li key={`race-${race}`}>
-              <input
-                className={styles.radio}
-                type="radio"
-                id={`race-selector-${race}`}
+              <Radio
                 name="race-selector"
+                label={race}
+                id={`race-selector-${race}`}
                 value={race}
-                checked={value === race}
+                isChecked={value === race}
                 onChange={handleChange}
               />
-              <label
-                className={styles.icon}
-                htmlFor={`race-selector-${race}`}
-              >
-                {race}
-              </label>
             </li>
           ))}
         </ul>

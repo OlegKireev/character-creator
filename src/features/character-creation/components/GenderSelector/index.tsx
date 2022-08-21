@@ -4,6 +4,7 @@ import { GenderType } from 'types/global';
 import { selectCharacterCreation } from 'features/character-creation/store/selectors';
 import { useSelector } from 'react-redux';
 import { useActions } from 'store/useActions';
+import { Radio } from 'components/Radio';
 import styles from './styles.module.scss';
 
 export function GenderSelector() {
@@ -22,38 +23,24 @@ export function GenderSelector() {
       <Title size="md" variant="secondary">Gender</Title>
       <ul className={styles.list}>
         <li>
-          <input
-            className={styles.radio}
-            type="radio"
+          <Radio
+            name="gender-selector"
+            label="M"
             id="gender-selecotor-male"
-            name="gender-selecotor"
             value="0"
-            checked={value === '0'}
+            isChecked={value === '0'}
             onChange={handleChange}
           />
-          <label
-            className={styles.icon}
-            htmlFor="gender-selecotor-male"
-          >
-            M
-          </label>
         </li>
         <li>
-          <input
-            className={styles.radio}
-            type="radio"
+          <Radio
+            name="gender-selector"
+            label="F"
             id="gender-selecotor-female"
-            name="gender-selecotor"
             value="1"
-            checked={value === '1'}
+            isChecked={value === '1'}
             onChange={handleChange}
           />
-          <label
-            className={styles.icon}
-            htmlFor="gender-selecotor-female"
-          >
-            F
-          </label>
         </li>
       </ul>
     </div>
