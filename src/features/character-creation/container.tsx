@@ -16,19 +16,21 @@ export function CharacterCreation() {
 
   return (
     <main className={cx(styles.wrapper, styles[side])}>
-      <div className={styles.left}>
-        <GenderSelector />
-        <RaceSelector />
-      </div>
-      <div className={styles.center}>
-        <Title>Character creator app</Title>
-        <div className={styles.centerFooter}>
-          <NameInput />
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <GenderSelector />
+          <RaceSelector />
         </div>
-      </div>
-      <div className={styles.right}>
-        <ClassSelector />
-        <CreateButton />
+        <div className={styles.center}>
+          <Title>Character creator app</Title>
+          <div className={styles.centerFooter}>
+            <NameInput />
+          </div>
+        </div>
+        <div className={styles.right}>
+          <ClassSelector />
+          <CreateButton />
+        </div>
       </div>
     </main>
   );
