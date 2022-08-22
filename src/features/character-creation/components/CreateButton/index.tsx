@@ -1,5 +1,7 @@
+import { Button } from 'components/Button';
+
 export function CreateButton() {
   return (
-    <button type="button">Create</button>
+    <Button>Create</Button>
   );
 }
