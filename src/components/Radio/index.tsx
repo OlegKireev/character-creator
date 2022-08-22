@@ -20,7 +20,7 @@ export function Radio({
   onChange,
 }: IProps) {
   return (
-    <>
+    <div className={styles.wrapper}>
       <input
         className={styles.radio}
         type="radio"
@@ -31,12 +31,15 @@ export function Radio({
         disabled={isDisabled}
         onChange={onChange}
       />
+      {isDisabled && (
+        <div className={styles.disabledLayer} />
+      )}
       <label
         className={styles.icon}
         htmlFor={id}
       >
         {label}
       </label>
-    </>
+    </div>
   );
 }
