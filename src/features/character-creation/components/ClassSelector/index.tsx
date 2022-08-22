@@ -29,11 +29,18 @@ export function ClassSelector() {
       <Title size="md" variant="secondary">Class</Title>
       <ul className={styles.list}>
         {names.map((className) => (
-          <li key={className} className={styles.item}>
+          <li key={className}>
             <Radio
               id={`class-selecotor-${className}`}
               name="class-selector"
-              label={className}
+              label={(
+                <div className={styles.itemLabel}>
+                  <img src={`assets/img/icons/classes/${className}.jpg`} alt={className} />
+                  <div className={styles.name}>
+                    <Title size="sm" variant="secondary">{className}</Title>
+                  </div>
+                </div>
+              )}
               value={className}
               isChecked={selectedClass === className}
               isDisabled={!availableClasses?.includes(className)}

@@ -4,10 +4,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 1rem 3rem;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
+}
+
+.itemLabel {
+  position: relative;
+}
+
+.name {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
 }
